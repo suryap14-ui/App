@@ -132,9 +132,11 @@ const Hero = () => {
     <section id="top" className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden grain">
       <div className="absolute inset-0 bg-grid pointer-events-none" />
       <Particles />
-      {/* Orb */}
-      <div className="absolute right-[-120px] top-1/2 -translate-y-1/2 hidden lg:block pointer-events-none">
-        <div className="ai-orb" data-testid="hero-orb" />
+      {/* 3D Three.js Scene — right-side anchored */}
+      <div className="absolute inset-y-0 right-0 left-0 lg:left-[40%] pointer-events-none z-0">
+        <Suspense fallback={null}>
+          <HeroScene />
+        </Suspense>
       </div>
       <div className="absolute -bottom-32 -left-32 w-[480px] h-[480px] rounded-full bg-violet/30 blur-[120px] pointer-events-none" />
       <div className="absolute -top-20 right-1/4 w-[360px] h-[360px] rounded-full bg-cyan/20 blur-[120px] pointer-events-none" />
@@ -754,7 +756,7 @@ const Chatbot = () => {
       {/* Trigger */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-cyan to-violet flex items-center justify-center glow-cyan transition-transform hover:scale-110"
+        className="fixed bottom-6 left-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-cyan to-violet flex items-center justify-center glow-cyan transition-transform hover:scale-110"
         data-testid="chatbot-trigger"
         aria-label="Open AI chat"
       >
@@ -768,7 +770,7 @@ const Chatbot = () => {
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="fixed bottom-28 right-6 z-50 w-[calc(100vw-3rem)] sm:w-[400px] h-[560px] glass-strong rounded-3xl flex flex-col overflow-hidden shadow-2xl"
+          className="fixed bottom-28 left-6 z-50 w-[calc(100vw-3rem)] sm:w-[400px] h-[560px] glass-strong rounded-3xl flex flex-col overflow-hidden shadow-2xl"
           data-testid="chatbot-panel"
         >
           {/* Header */}
