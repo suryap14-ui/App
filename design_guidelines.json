@@ -1,0 +1,162 @@
+{
+  "project_context": {
+    "domain": "Software Development Consultancy",
+    "theme": "dark",
+    "archetype": "Archetype 7 (Electric & Neon) - Custom AI Lab Variant",
+    "mood": "Cutting-edge, authoritative, intelligent, dynamic",
+    "target_audience": "Enterprises and startups seeking AI-native custom development"
+  },
+  "design_system": {
+    "colors": {
+      "background": {
+        "base": "#060611",
+        "surface": "rgba(13, 13, 32, 0.6)",
+        "surface_elevated": "rgba(20, 20, 45, 0.8)",
+        "glass": "rgba(6, 6, 17, 0.6)"
+      },
+      "brand": {
+        "primary": "#00F0FF",
+        "secondary": "#B026FF",
+        "accent": "#00E5FF",
+        "gradient_primary": "linear-gradient(135deg, #00F0FF 0%, #B026FF 100%)"
+      },
+      "text": {
+        "primary": "#FFFFFF",
+        "secondary": "#8B949E",
+        "muted": "#484F58",
+        "inverse": "#060611"
+      },
+      "border": {
+        "default": "rgba(255, 255, 255, 0.1)",
+        "glow": "rgba(0, 240, 255, 0.3)"
+      }
+    },
+    "typography": {
+      "headings": {
+        "font_family": "'Unbounded', sans-serif",
+        "weights": ["300", "500", "700", "900"],
+        "tracking": "tracking-tight"
+      },
+      "body": {
+        "font_family": "'IBM Plex Sans', sans-serif",
+        "weights": ["400", "500"],
+        "tracking": "tracking-normal"
+      },
+      "mono": {
+        "font_family": "'JetBrains Mono', monospace",
+        "usage": "Overlines, labels, code snippets"
+      },
+      "scale": {
+        "h1": "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight",
+        "h2": "text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight",
+        "h3": "text-xl sm:text-2xl font-medium",
+        "h4": "text-lg sm:text-xl font-medium",
+        "body": "text-base leading-relaxed",
+        "small": "text-sm text-secondary",
+        "overline": "text-xs font-mono uppercase tracking-[0.2em] text-primary"
+      }
+    },
+    "spacing_and_layout": {
+      "container_padding": "px-6 md:px-12 lg:px-24",
+      "section_spacing": "py-24 md:py-32 lg:py-40",
+      "grid_patterns": {
+        "bento_marketing": "grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-8 md:gap-12",
+        "bento_dense": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"
+      },
+      "radius": "rounded-2xl",
+      "glassmorphism": "backdrop-blur-xl bg-background-glass border border-border-default shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
+    },
+    "motion_and_interactions": {
+      "hover_states": "transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(0,240,255,0.2)]",
+      "page_reveals": "Use framer-motion for staggered fade-in-up reveals on scroll. Initial: { opacity: 0, y: 20 }, WhileInView: { opacity: 1, y: 0 }",
+      "chatbot_widget": "Pulsating glow animation using Tailwind `animate-pulse` on the outer ring, smooth scale-in for the chat panel.",
+      "hero_background": "Use react-tsparticles for subtle floating data nodes, combined with a generative CSS gradient mesh or Framer Motion animated blob."
+    }
+  },
+  "components_instructions": {
+    "universal": [
+      "Use purely HTML/Tailwind for main structure, Shadcn for interactive pieces (Tabs, Carousel, Form).",
+      "ALL interactive elements MUST have a `data-testid` attribute (e.g., `data-testid='hero-cta-button'`).",
+      "Never use pure black; use the defined #060611 deep navy base.",
+      "Component files should be .js/.jsx, not .tsx."
+    ],
+    "hero": {
+      "layout": "Centered alignment, massive H1, generative dark gradient mesh background.",
+      "effects": "Integrate a 3D orb or particle effect (react-tsparticles) behind the text.",
+      "cta": "Primary button: solid cyan with inverse dark text. Secondary: glass outline."
+    },
+    "we_build_services": {
+      "layout": "Grid-cols-1 md:grid-cols-2 lg:grid-cols-3. Cardless or 'Tracing Beam' style cards with subtle 1px border and hover glow.",
+      "content": "UI/UX, Mobile, Cloud, Architectural, Testing, E-Commerce, Staffing."
+    },
+    "tech_stack_marquee": {
+      "layout": "Full width, slow continuous scroll using `react-fast-marquee`.",
+      "style": "Monochrome logos or text overlines (Ruby on Rails, AWS, PostgreSQL, Angular, etc.) separated by dots or stars."
+    },
+    "capabilities_tabs": {
+      "library": "Shadcn Tabs",
+      "customization": "Remove standard Vercel look. Use glassmorphism for the tab list, active tab gets an electric cyan bottom border or glow."
+    },
+    "portfolio_case_studies": {
+      "layout": "Bento grid (Mode A) or large overlapping cards. High contrast images.",
+      "images": "Use provided portfolio URLs. Max height 80vh on mobile."
+    },
+    "testimonials": {
+      "library": "Shadcn Carousel",
+      "style": "Minimalist cards, avatar images, generous padding."
+    },
+    "clients_logo_wall": {
+      "layout": "Marquee or static dense grid.",
+      "images": "Use provided BVMCS logo URLs."
+    },
+    "contact_form": {
+      "library": "Shadcn Form, Input, Textarea",
+      "style": "Dark inputs bg-[rgba(13,13,32,0.8)], cyan focus rings focus:ring-primary."
+    },
+    "chatbot_widget": {
+      "layout": "Fixed bottom-right `fixed bottom-6 right-6 z-50`.",
+      "trigger": "Circular button with `shadow-[0_0_15px_rgba(0,240,255,0.5)]` and subtle pulse.",
+      "panel": "Glass panel 350px wide. Chat interface + lead capture form inline."
+    }
+  },
+  "media": {
+    "hero_backgrounds": [
+      {
+        "url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
+        "description": "Abstract fluid dark 3D mesh"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=2000&auto=format&fit=crop",
+        "description": "Abstract dark neon geometric"
+      }
+    ],
+    "client_logos": [
+      { "url": "https://www.bvmcs.com/images/logo-mastergst.png", "description": "MasterGST" },
+      { "url": "https://www.bvmcs.com/images/logo2.png", "description": "Client 2" },
+      { "url": "https://www.bvmcs.com/images/logo4.png", "description": "Client 4" },
+      { "url": "https://www.bvmcs.com/images/logo5.png", "description": "Client 5" },
+      { "url": "https://www.bvmcs.com/images/logo7.png", "description": "Client 7" },
+      { "url": "https://www.bvmcs.com/images/logo9.png", "description": "Client 9" }
+    ],
+    "portfolio": [
+      { "url": "https://www.bvmcs.com/images/our-work1.png", "description": "Portfolio item 1" },
+      { "url": "https://www.bvmcs.com/images/our-work2.png", "description": "Portfolio item 2" },
+      { "url": "https://www.bvmcs.com/images/our-work3.png", "description": "Portfolio item 3" }
+    ],
+    "testimonials": [
+      { "url": "https://www.bvmcs.com/images/user.jpg", "description": "Sudhakar Pala" },
+      { "url": "https://www.bvmcs.com/images/user2.jpg", "description": "Mahender" }
+    ],
+    "chatbot_avatar": [
+      {
+        "url": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1000&auto=format&fit=crop",
+        "description": "AI Robot Avatar"
+      }
+    ]
+  },
+  "tech_stack": {
+    "icons": "lucide-react",
+    "animation": ["framer-motion", "react-tsparticles", "tsparticles"],
+    "components": ["shadcn/ui (tabs, carousel, form, input, textarea)"]
+  }
+}
